@@ -10,7 +10,7 @@ Anonymous discussion forum website for [LNMIIT](https://www.lnmiit.ac.in/) Centr
 
 ## Test link
 
-Link: 
+Link: https://anonymous-discussion-forum-007.herokuapp.com/test
 
 This is hosted on Heroku for free, so loading might be slow for the first time.
 
