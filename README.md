@@ -1,6 +1,23 @@
-# discussion
-Simple anonymous discussion site with backend. First attempt at Redux. React/Redux/Node/MongoDB
+# Anonymous Discussion Forum
 
-Add any string after the url to start your own discussion, for example: https://tree-discussion.herokuapp.com/test
+Anonymous discussion forum website for [LNMIIT](https://www.lnmiit.ac.in/) Centre For Wellness and Positive Health (L-CWPH). All rights reserved under The LNM Institute Of Information Technology.
+## Tech Stack
 
-(This is hosted on Heroku for free, so loading might be slow the first time)
+- MongoDB
+- Express
+- ReactJS
+- Node
+
+## Test link
+
+Link: 
+
+This is hosted on Heroku for free, so loading might be slow for the first time.
+
+## Project Contributors
+
+- [Harshit Prasad](https://www.linkedin.com/in/harshit-prasad/)
+
+- [Riya Lohia](https://www.linkedin.com/in/riya-lohia-565b18140/)
+
+- [Siddharth Singh](https://www.linkedin.com/in/siddharth-singh-61841b12a/)
