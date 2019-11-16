@@ -14,6 +14,13 @@ Link: https://anonymous-discussion-forum-007.herokuapp.com/test
 
 This is hosted on Heroku for free, so loading might be slow for the first time.
 
+## Deployment
+
+To deploy on your localhost, follow these steps:
+
+- `nodemon server` to start node server.
+- `cd frontend && npm start` to deploy frontend locally.
+
 ## Project Contributors
 
 - [Harshit Prasad](https://www.linkedin.com/in/harshit-prasad/)
