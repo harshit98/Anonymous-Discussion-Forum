@@ -15,7 +15,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
