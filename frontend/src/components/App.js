@@ -17,7 +17,7 @@ class App extends Component {
     return(
       <div className="rootMessage">
         <LoadingIndicatorContainer  />
-        <MessageListContainer replyText="send message"  parentId={rootMessage._id} discussionId={this.props.match.params.discussionId}/>
+        <MessageListContainer replyText="Create a new thread"  parentId={rootMessage._id} discussionId={this.props.match.params.discussionId}/>
       </div>
     );
   }
