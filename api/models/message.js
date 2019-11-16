@@ -6,7 +6,9 @@ var message = new Schema({
     type: String,
     required: [true, 'No conversation Id']
   },
+  
   parent: Schema.Types.ObjectId,
+  
   text: {
     type: String,
     required: [true, 'No text']

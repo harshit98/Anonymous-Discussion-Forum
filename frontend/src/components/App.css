@@ -1,28 +1,23 @@
-
 .messageList {
   display: block;
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
- .message, .rootMessage,body{
 
-
-}
+/* .message, .rootMessage, body { } */
 
 .message{
   display: block;
   border: 1px solid black;
-max-width: 900px;
+  max-width: 100%;
   background-color: white;
-
-
-padding: 10px 5px 5px 10px;
-margin: 5px 0px 0px 0px;
+  padding: 10px 5px 5px 10px;
+  margin: 5px 0px 0px 0px;
 }
+
 .replyButton {
   font-size: 12px;
-
 }
 
 .messageInput {
@@ -32,8 +27,8 @@ margin: 5px 0px 0px 0px;
   display: block;
   width: 100%;
   margin-bottom: 5px;
-
 }
+
 .notification {
   font-size: 12px;
   color: red;

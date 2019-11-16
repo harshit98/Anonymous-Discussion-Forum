@@ -13,13 +13,9 @@ import thunkMiddleware from 'redux-thunk';
 
 import logger from 'redux-logger';
 
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { fetchDiscussion, postMessage } from './actions/actions';
-
+// import { fetchDiscussion, postMessage } from './actions/actions';
 
 var store = createStore(discussionApp,
   applyMiddleware(
@@ -28,18 +24,12 @@ var store = createStore(discussionApp,
   )
 );
 
-// console.log(store.getState());
-// let unsubscribe = store.subscribe(() =>
-//   console.log(store.getState())
-// );
-
-//store.dispatch(fetchDiscussion("abc"));
-
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+      <Route path="/:discussionId" component={AppContainer} />
+    </Router>
+  </Provider>, document.getElementById('root')
+);
 
-    <Route path="/:discussionId" component={AppContainer} />
-  </Router>
-  </Provider>, document.getElementById('root'));
 registerServiceWorker();

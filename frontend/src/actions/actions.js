@@ -47,24 +47,21 @@ export const receiveDiscussion = (discussionId, json = {}) => {
 
 export function fetchDiscussion(discussionId) {
   return (dispatch) => {
-
     dispatch(requestDiscussion(discussionId));
-    return fetch(`/api/anonymous-discussion-forum/${discussionId}`)
+    return fetch(`/api/discussion/${discussionId}`)
       .then(
         response => {
           return response.json();
         },
-        // Do not use catch, because that will also catch
-        // any errors in the dispatch and resulting render,
-        // causing an loop of 'Unexpected batch number' errors.
-        // https://github.com/facebook/react/issues/6895
+
+        // eslint-disable-next-line no-console
         error => console.log('An error occured.', error)
       )
       .then(json => {
+        // eslint-disable-next-line no-console
         console.log('json', json);
         dispatch(receiveDiscussion(discussionId, json));
-      }
-      );
+      });
   };
 }
 
@@ -77,41 +74,41 @@ export const sendMessage = (parentId) => {
 
 export function postMessage(message, parentId, discussionId) {
 
-  return (dispatch, getState) => {
-
-    console.log('fetch');
-    //let messageText = state.discussion.messages.find(message => (message._id === parentId));
-    console.log('fetchPost');
-
+  return (dispatch) => {
+    // console.log('fetch');
+    // let messageText = state.discussion.messages.find(message => (message._id === parentId));
+    // console.log('fetchPost');
     dispatch(sendMessage(parentId));
 
-    return fetch(`/api/anonymous-discussion-forum/${discussionId}`, {
+    return fetch(`/api/discussion/${discussionId}`, {
       method: 'POST',
+      
       headers: {
         'Content-Type': 'application/json'
       },
+      
       body: JSON.stringify({
         text: message,
         parent: parentId
       })
     })
-      .then(
-        (response) => {
-          console.log(response);
-          //let jsonPromise = response.json();
-          //console.log(jsonPromise);
-          if (response.ok) {
-            response.json().then((json) => {
-              console.log('json',json);
-              dispatch(receiveMessage(json));
-            });
-          } else {
-            console.log('json notok', response);
-            dispatch(errorReceiveMessage(response.statusText, parentId));
+    .then(
+      (response) => {
+        // eslint-disable-next-line no-console
+        console.log(response);
 
-          }
-        },
-        (error) =>dispatch(errorReceiveMessage("Failed to post message: (" + error.message + ")", parentId))
-      );
+        if (response.ok) {
+          response.json().then((json) => {
+            // console.log('json',json);
+            dispatch(receiveMessage(json));
+          });
+        } else {
+          // console.log('json not ok', response);
+          dispatch(errorReceiveMessage(response.statusText, parentId));
+        }
+      },
+      
+      (error) =>dispatch(errorReceiveMessage("Failed to post message: (" + error.message + ")", parentId))
+    );
   };
 }

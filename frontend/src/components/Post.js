@@ -1,17 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 class Post extends React.Component {
-
-
   render() {
-    return <div>
-      {this.props.post.user.name}
-    </div>;
+    return(
+      <div>
+        {this.props.post.user.name}
+      </div>
+    );
   }
 }
-
-console.log('hei');
 
 export default Post;
 
@@ -20,6 +19,5 @@ Post.PropTypes = {
   ldk: PropTypes.bool.isRequired
 };
 
-
-
+// eslint-disable-next-line no-console
 console.log(Post);

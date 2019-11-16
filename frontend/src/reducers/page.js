@@ -1,14 +1,10 @@
-
-
-const list = (state = {isFetching: false, discussionId: "jgd"}, action) => {
+const list = (state = { isFetching: false, discussionId: "0"}, action) => {
   switch (action.type) {
-
-    case 'REQUEST_DISCUSSION':{
-
+    case 'REQUEST_DISCUSSION': {
       return {...state, isFetching: true};
     }
-    case 'RECEIVE_DISCUSSION':{
 
+    case 'RECEIVE_DISCUSSION': {
       return {...state, isFetching: false};
     }
 
@@ -16,7 +12,5 @@ const list = (state = {isFetching: false, discussionId: "jgd"}, action) => {
       return state;
   }
 };
-
-
 
 export default list;

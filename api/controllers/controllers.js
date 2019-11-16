@@ -1,19 +1,19 @@
 var Message = require('../models/message');
 
-exports.getDiscussion = function (req, res) {
+exports.getDiscussion = function(req, res) {
   Message.find({conversationId: req.params.conversationId},
     (err, messages) => {
       if (err) {
         res.status(500).send(err);
-      } else {
+      } 
+      else {
         res.json(messages);
       }
-
     }
   );
 };
 
-exports.postComment = function (req, res) {
+exports.postComment = function(req, res) {
   req.body.conversationId = req.params.conversationId;
 
   let message = new Message(req.body);
@@ -22,7 +22,8 @@ exports.postComment = function (req, res) {
     console.log('here');
     if (err) {
       res.status(500).send(err);
-    } else {
+    } 
+    else {
       res.json(message);
     }
   });

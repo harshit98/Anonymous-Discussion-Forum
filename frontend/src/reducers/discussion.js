@@ -1,4 +1,3 @@
-
 let rootMessage = {_id: "5995986ea6deb7240c381cd0"};
 export { rootMessage };
 
@@ -10,28 +9,31 @@ const list = (state = {messages:[rootMessage]}, action) => {
       newState.messages = newState.messages.map((message) => {
         if (message._id === action.id) {
           return {...message, showReplyBox: !message.showReplyBox};
-        } else {
+        } 
+        else {
           return message;
         }
       });
 
       return newState;
     }
-    case 'CHANGE_INPUT':{
+
+    case 'CHANGE_INPUT': {
       let newState = {...state};
 
       newState.messages = newState.messages.map((message) => {
         if (message._id === action.id) {
           return {...message, input: action.input};
-        } else {
+        }
+        else {
           return message;
         }
       });
 
       return newState;
     }
-    case 'RECEIVE_MESSAGE':{
 
+    case 'RECEIVE_MESSAGE': {
       let newState = {...state};
       //newState.messages = newState.messages.concat(action.message);
 
@@ -46,37 +48,37 @@ const list = (state = {messages:[rootMessage]}, action) => {
 
       return newState;
     }
-    case 'ERROR_RECEIVE_MESSAGE':{
 
+    case 'ERROR_RECEIVE_MESSAGE': {
       let newState = {...state};
-
 
       newState.messages = newState.messages.map((message) => {
         if (message._id === action.parentId) {
           return {...message, waitingMessageResponse: false, notification: action.error};
-        } else {
+        } 
+        else {
           return message;
         }
       });
 
       return newState;
     }
-    case 'RECEIVE_DISCUSSION':{
-      let newState = {...state };
 
+    case 'RECEIVE_DISCUSSION': {
+      let newState = {...state };
 
       newState.messages = action.discussion.concat(rootMessage);
       return newState;
     }
 
-    case 'SEND_MESSAGE':{
-
+    case 'SEND_MESSAGE': {
       let newState = {...state};
 
       newState.messages = newState.messages.map((message) => {
         if (message._id === action.parentId) {
           return {...message, waitingMessageResponse: true, notification: null};
-        } else {
+        }
+        else {
           return message;
         }
       });
@@ -88,6 +90,5 @@ const list = (state = {messages:[rootMessage]}, action) => {
       return state;
   }
 };
-
 
 export default list;
