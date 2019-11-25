@@ -12,6 +12,10 @@ var port = process.env.PORT || 3001;
 var app = express();
 var Message = mongoose.model('Message')
 
+// Uncomment this line to run it on development mode (localhost) //
+//mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/discussion');
+
+// This line is working on production mode //
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:admin@cluster0-xucmg.mongodb.net/test?retryWrites=true&w=majority');
 
 app.use(bodyParser.urlencoded({ extended: true }));

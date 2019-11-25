@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "cd frontend && npm install && npm run build && cd .."
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd .."
   },
   "dependencies": {
     "body-parser": "^1.19.0",
