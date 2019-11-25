@@ -12,7 +12,7 @@ var port = process.env.PORT || 3001;
 var app = express();
 var Message = mongoose.model('Message')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/discussion');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:admin@cluster0-xucmg.mongodb.net/test?retryWrites=true&w=majority');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
