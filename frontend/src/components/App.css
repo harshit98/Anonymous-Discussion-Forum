@@ -5,19 +5,31 @@
   margin: 0px;
 }
 
-/* .message, .rootMessage, body { } */
+/* .message, body { } */
+
+.rootMessage {
+  margin-top: 2%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
 
 .message {
   display: block;
-  border: 1px solid black;
+  border: 1px groove;
   max-width: 100%;
   background-color: white;
   padding: 10px 5px 5px 10px;
-  margin: 5px 0px 0px 0px;
+  margin: 8px 0px 0px 0px;
 }
 
 .replyButton {
   font-size: 12px;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+input[type="submit"] {
+  background-color: whitesmoke;
 }
 
 .messageInput {
@@ -28,8 +40,3 @@
   width: 100%;
   margin-bottom: 5px;
 }
-
-/* .notification {
-  font-size: 12px;
-  color: red;
-} */

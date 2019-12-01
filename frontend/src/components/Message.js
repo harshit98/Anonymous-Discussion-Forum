@@ -54,7 +54,7 @@ class Message extends Component {
 
     let replyText = this.props.replyText || "reply";
 
-    let replyButton = <a href='#' className="replyButton" onClick={this.handleReplyBtnClick} >{replyText}</a>;
+    let replyButton = <button href='#' className="replyButton" onClick={this.handleReplyBtnClick} >{replyText}</button>;
 
     let thisMessage = this.props.message;
     let isLoading = thisMessage.waitingMessageResponse;
